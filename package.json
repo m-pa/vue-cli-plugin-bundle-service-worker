@@ -1,0 +1,30 @@
+{
+  "name": "vue-cli-plugin-bundle-service-worker",
+  "version": "0.0.1",
+  "description": "Builds your service worker using webpack",
+  "main": "index.js",
+  "keywords": [
+    "vue",
+    "cli",
+    "service worker",
+    "sw",
+    "build",
+    "built"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diachedelic/vue-cli-plugin-bundle-service-worker.git"
+  },
+  "peerDependencies": {
+    "workbox": "webpack@>=4"
+  },
+  "author": "James Diacono",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diachedelic/vue-cli-plugin-bundle-service-worker/issues"
+  },
+  "homepage": "https://github.com/diachedelic/vue-cli-plugin-bundle-service-worker",
+  "publishConfig": {
+    "access": "public"
+  }
+}
