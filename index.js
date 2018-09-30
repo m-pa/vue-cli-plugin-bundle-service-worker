@@ -46,12 +46,20 @@ module.exports = (api, { pwa, outputDir, pluginOptions }) => {
 
         config
           .plugin('workbox')
-          .tap(args => {
+          // use init instead of tap, as it seems the args are not available
+          // for tap when this is called
+          .init((Plugin, [options]) => {
             // Inject manifest into built service worker (modify in place)
-            args[0].swSrc = path.resolve(targetDir, swDest)
+            options.swSrc = path.resolve(targetDir, swDest)
 
-            return args
+            return new Plugin(options)
           })
+          // .tap(args => {
+          //   // Inject manifest into built service worker (modify in place)
+          //   args[0].swSrc = path.resolve(targetDir, swDest)
+
+          //   return args
+          // })
       })
   })
 }
