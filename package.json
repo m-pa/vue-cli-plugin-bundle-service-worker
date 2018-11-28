@@ -16,7 +16,7 @@
     "url": "git+https://github.com/diachedelic/vue-cli-plugin-bundle-service-worker.git"
   },
   "peerDependencies": {
-    "workbox": "webpack@>=4"
+    "webpack": "^4.0.0"
   },
   "author": "James Diacono",
   "license": "MIT",
