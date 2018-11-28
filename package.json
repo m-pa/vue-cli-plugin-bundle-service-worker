@@ -1,6 +1,6 @@
 {
   "name": "vue-cli-plugin-bundle-service-worker",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Builds your service worker using webpack",
   "main": "index.js",
   "keywords": [
