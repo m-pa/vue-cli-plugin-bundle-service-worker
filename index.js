@@ -2,7 +2,7 @@ const path = require('path')
 const buildSW = require('./src/build-sw')
 const BundleServiceWorkerPlugin = require('./src/BundleServiceWorkerPlugin')
 
-module.exports = (api, { pwa, outputDir, pluginOptions }) => {
+module.exports = (api, { pwa, outputDir, pluginOptions: { swWebpackConfig } = {}}) => {
   if (!pwa || !pwa.workboxOptions) {
     throw new Error('pwa.workboxOptions is missing')
   }
@@ -22,8 +22,9 @@ module.exports = (api, { pwa, outputDir, pluginOptions }) => {
     swSrc,
     swDest,
     targetDir,
+    swWebpackConfig,
   }
-
+  
   api.registerCommand('build:sw', {
     description: 'Builds service worker',
     usage: 'vue-cli-service build:sw',

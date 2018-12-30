@@ -1,15 +1,17 @@
 const path = require('path')
 const webpack = require('webpack')
+const merge = require('webpack-merge')
 
-module.exports = async ({ silent, targetDir, swSrc, swDest }) => {
-  const webpackConfig = {
+
+module.exports = async ({ silent, targetDir, swSrc, swDest, swWebpackConfig = {} }) => {
+  const webpackConfig = merge({
     mode: process.env.NODE_ENV,
     entry: swSrc,
     output: {
       path: targetDir,
       filename: swDest,
     },
-  }
+  }, swWebpackConfig)
 
   return new Promise((resolve, reject) => {
     webpack(webpackConfig, (err, stats) => {
